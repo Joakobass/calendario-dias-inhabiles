@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm install:*)",
+      "Bash(pnpm build:*)",
+      "Bash(curl -s http://localhost:8080/health)",
+      "Bash(pkill -f 'node dist/app.js')",
+      "Bash(netstat -ano)",
+      "Bash(taskkill:*)",
+      "Bash(cmd /c \"taskkill /PID 18044 /F\")",
+      "Bash(cmd /c \"taskkill /PID 18044 /F 2>&1\")"
+    ]
+  }
+}
