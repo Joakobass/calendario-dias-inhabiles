@@ -1,6 +1,8 @@
 import express from "express";
 import { config } from "./config/config";
 import { feriadosRouter } from "./routes/feriados.router";
+import { inhabilesRouter } from "./routes/inhabiles.router";
+import { calculoRouter } from "./routes/calculo.router";
 import { logger } from "./utils/logger";
 
 const app = express();
@@ -9,6 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/feriados", feriadosRouter);
+app.use("/api/inhabiles", inhabilesRouter);
+app.use("/api/calcular", calculoRouter);
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });

@@ -2,10 +2,13 @@ import { Router } from "express";
 import { FeriadosController } from "../controllers/feriados.controller";
 import { FeriadosService } from "../services/feriados.service";
 import { FeriadosLocalDAO } from "../dao/local/FeriadosLocalDAO";
+import { InhabilesService } from "../services/inhabiles.service";
+import { InhabilesLocalDAO } from "../dao/local/InhabilesLocalDAO";
 
 const dao = new FeriadosLocalDAO();
 const service = new FeriadosService(dao);
-const controller = new FeriadosController(service);
+const inhabilesService = new InhabilesService(new InhabilesLocalDAO());
+const controller = new FeriadosController(service, inhabilesService);
 
 export const feriadosRouter = Router();
 

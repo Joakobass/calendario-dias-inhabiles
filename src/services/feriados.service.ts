@@ -1,5 +1,5 @@
 import { IFeriadosDAO } from "../dao/interfaces/IFeriadosDAO";
-import { FeriadosData, Feriado, CheckFechaResult } from "../types/feriado.types";
+import { FeriadosData, Feriado } from "../types/feriado.types";
 import { config } from "../config/config";
 import { logger } from "../utils/logger";
 
@@ -45,14 +45,9 @@ export class FeriadosService {
     return this.dao.delete(anio);
   }
 
-  async checkFecha(fecha: string): Promise<CheckFechaResult> {
-    const anio = new Date(fecha).getFullYear();
+  async findFeriadoByFecha(fecha: string): Promise<Feriado | undefined> {
+    const anio = parseInt(fecha.substring(0, 4), 10);
     const data = await this.getByAnio(anio);
-    const feriado = data.feriados.find((f) => f.fecha === fecha);
-    return {
-      fecha,
-      esFeriado: !!feriado,
-      feriado,
-    };
+    return data.feriados.find((f) => f.fecha === fecha);
   }
 }

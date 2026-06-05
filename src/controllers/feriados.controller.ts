@@ -1,8 +1,13 @@
 import { Request, Response } from "express";
 import { FeriadosService } from "../services/feriados.service";
+import { InhabilesService } from "../services/inhabiles.service";
+import { CheckFechaResult } from "../types/feriado.types";
 
 export class FeriadosController {
-  constructor(private readonly service: FeriadosService) {}
+  constructor(
+    private readonly service: FeriadosService,
+    private readonly inhabilesService: InhabilesService
+  ) {}
 
   getAll = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -48,7 +53,16 @@ export class FeriadosController {
         res.status(400).json({ status: "error", message: "Formato de fecha inválido. Usá YYYY-MM-DD" });
         return;
       }
-      const result = await this.service.checkFecha(fecha);
+      const [feriado, inhabil] = await Promise.all([
+        this.service.findFeriadoByFecha(fecha),
+        this.inhabilesService.findByFecha(fecha),
+      ]);
+      const result: CheckFechaResult = {
+        fecha,
+        esInhabil: !!(feriado ?? inhabil),
+        feriado,
+        inhabil: inhabil ?? undefined,
+      };
       res.json({ status: "success", payload: result });
     } catch (error) {
       res.status(500).json({ status: "error", message: (error as Error).message });

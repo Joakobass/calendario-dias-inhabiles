@@ -11,8 +11,15 @@ export interface FeriadosData {
   feriados: Feriado[];
 }
 
+export interface InhabilJudicial {
+  fecha: string; // "YYYY-MM-DD"
+  descripcion: string;
+  creadoEn: string; // ISO datetime
+}
+
 export interface CheckFechaResult {
   fecha: string;
-  esFeriado: boolean;
-  feriado?: Feriado;
+  esInhabil: boolean; // true si es feriado nacional O inhábil judicial
+  feriado?: Feriado; // presente si es feriado nacional
+  inhabil?: InhabilJudicial; // presente si es inhábil judicial
 }
