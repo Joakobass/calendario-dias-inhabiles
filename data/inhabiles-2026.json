@@ -1,14 +1,13 @@
 [
   {
     "fecha": "2026-01-01",
-    "descripcion": "Feria judicial de Enero",
-    "creadoEn": "2026-06-05T18:05:08.787Z"
+    "descripcion": "Feria judicial de Enero"
   },
   {
     "fecha": "2026-01-02",
-    "descripcion": "Feria judicial de Enero",
-    "creadoEn": "2026-06-05T18:14:23.261Z"
+    "descripcion": "Feria judicial de Enero"
   },
+
   {
     "fecha": "2026-01-03",
     "descripcion": "Feria judicial de Enero"
@@ -126,13 +125,59 @@
     "descripcion": "Feria judicial de Enero"
   },
   {
+    "fecha": "2026-07-20",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-21",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-22",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-23",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-24",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-25",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-26",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-27",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-28",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-29",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-30",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
+    "fecha": "2026-07-31",
+    "descripcion": "Feria judicial de Julio"
+  },
+  {
     "fecha": "2026-04-21",
-    "descripcion": "Inhabil decretado por CSJN",
-    "creadoEn": "2026-06-05T18:16:23.298Z"
+    "descripcion": "Inhabil decretado por CSJN - Res 926/2026"
   },
   {
     "fecha": "2026-04-22",
-    "descripcion": "Inhabil decretado por CSJN",
-    "creadoEn": "2026-06-05T18:16:26.858Z"
+    "descripcion": "Inhabil decretado por CSJN - Res 926/2026"
   }
 ]
